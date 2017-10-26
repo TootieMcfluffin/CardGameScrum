@@ -68,6 +68,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\CardModel.cs" />
+    <Compile Include="Models\DeckModel.cs" />
+    <Compile Include="Models\Enums.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -95,7 +98,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GameProcesses\" />
-    <Folder Include="Models\" />
     <Folder Include="Pages\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
