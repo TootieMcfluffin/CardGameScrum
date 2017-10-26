@@ -9,5 +9,7 @@ namespace CardGameManager.Models
     public class Player
     {
         public string Name { get; set; }
+
+        public List<CardModel> hand = new List<CardModel>();
     }
 }
