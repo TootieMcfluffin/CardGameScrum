@@ -1,0 +1,146 @@
+﻿<Page x:Class="CardGameManager.Pages.MainMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CardGameManager.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="700"
+      Title="MainMenu" ShowsNavigationUI="False">
+
+    <Grid Background="DarkGreen">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0"
+               Content="CARD GAME EXTRAVAGANZA"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               FontSize="70"
+               Margin="0 0 0 5"
+               Foreground="Gold"
+               FontFamily="Onyx"/>
+        <Label Grid.Row="0"
+               Content="CARD GAME EXTRAVAGANZA"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               FontSize="70"
+               Margin="0 5 0 0"
+               Foreground="Red"
+               FontFamily="Onyx"/>
+        <Label Grid.Row="0"
+               Content="CARD GAME EXTRAVAGANZA"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               FontSize="70"
+               FontFamily="Onyx"/>
+        <StackPanel Grid.Row="1">
+            <Button Height="50"
+                    Width="200"
+                    Background="Maroon"
+                    BorderBrush="Black"
+                    x:Name="BlackjackButton"
+                    Click="BlackjackButton_Click"
+                    Margin="10">
+                <Grid>
+                    <Label Content="BLACKJACK"
+                           FontFamily="Onyx"
+                           FontSize="40"
+                           Foreground="Gold"
+                           Padding="0 0 0 0"
+                           Margin="0 -2 0 0"/>
+                    <Label Content="BLACKJACK"
+                           FontFamily="Onyx"
+                           FontSize="40"
+                           Foreground="Red"
+                           Margin="0 2 0 0"
+                           Padding="0 0 0 0"/>
+                    <Label Content="BLACKJACK"
+                           FontFamily="Onyx"
+                           FontSize="40"
+                           Padding="0 0 0 0"/>
+                </Grid>
+            </Button>
+            <Button Height="50"
+                    Width="200"
+                    Background="Maroon"
+                    BorderBrush="Black"
+                    x:Name="Poker"
+                    Click="Poker_Click"
+                    Margin="10">
+                <Grid>
+                    <Label Content="POKER"
+                           FontFamily="Onyx"
+                           FontSize="40"
+                           Foreground="Gold"
+                           Padding="0 0 0 0"
+                           Margin="0 -2 0 0"/>
+                    <Label Content="POKER"
+                           FontFamily="Onyx"
+                           FontSize="40"
+                           Foreground="Red"
+                           Margin="0 2 0 0"
+                           Padding="0 0 0 0"/>
+                    <Label Content="POKER"
+                           FontFamily="Onyx"
+                           FontSize="40"
+                           Padding="0 0 0 0"/>
+                </Grid>
+            </Button>
+            <Button Height="50"
+                    Width="200"
+                    Background="Maroon"
+                    BorderBrush="Black"
+                    x:Name="War"
+                    Click="War_Click"
+                    Margin="10">
+                <Grid>
+                    <Label Content="WAR"
+                           FontFamily="Onyx"
+                           FontSize="40"
+                           Foreground="Gold"
+                           Padding="0 0 0 0"
+                           Margin="0 -2 0 0"/>
+                    <Label Content="WAR"
+                           FontFamily="Onyx"
+                           FontSize="40"
+                           Foreground="Red"
+                           Margin="0 2 0 0"
+                           Padding="0 0 0 0"/>
+                    <Label Content="WAR"
+                           FontFamily="Onyx"
+                           FontSize="40"
+                           Padding="0 0 0 0"/>
+                </Grid>
+            </Button>
+            <Button Height="50"
+                    Width="200"
+                    Background="Maroon"
+                    BorderBrush="Black"
+                    x:Name="GoFish"
+                    Click="GoFish_Click"
+                    Margin="10">
+                <Grid>
+                    <Label Content="GO FISH"
+                           FontFamily="Onyx"
+                           FontSize="40"
+                           Foreground="Gold"
+                           Padding="0 0 0 0"
+                           Margin="0 -2 0 0"/>
+                    <Label Content="GO FISH"
+                           FontFamily="Onyx"
+                           FontSize="40"
+                           Foreground="Red"
+                           Margin="0 2 0 0"
+                           Padding="0 0 0 0"/>
+                    <Label Content="GO FISH"
+                           FontFamily="Onyx"
+                           FontSize="40"
+                           Padding="0 0 0 0"/>
+                </Grid>
+            </Button>
+        </StackPanel>
+
+    </Grid>
+</Page>
