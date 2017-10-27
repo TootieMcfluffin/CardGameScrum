@@ -26,7 +26,7 @@ namespace CardGameManager.GameProcesses
 
         public static bool IsWar(CardModel playerOneCard, CardModel playerTwoCard)
         {
-            return playerOneCard.CardValue == playerTwoCard.CardValue;
+            return (int)playerOneCard.CardValue == (int)playerTwoCard.CardValue;
         }
     }
 }
