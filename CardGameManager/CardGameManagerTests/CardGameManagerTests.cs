@@ -9,24 +9,31 @@ namespace CardGameManagerTests
     [TestClass]
     public class CardGameManagerTests
     {
-        DeckModel deck = new DeckModel();
+        static CardModel playerOneCardNine = new CardModel(Enums.Suit.CLUBS, Enums.Value.NINE);
+        static CardModel playerOneCardFour = new CardModel(Enums.Suit.CLUBS, Enums.Value.FOUR);
+        static CardModel playerTwoCardEight = new CardModel(Enums.Suit.CLUBS, Enums.Value.EIGHT);
         Player playerOne = new Player();
         Player playerTwo = new Player();
-        CardModel[] cards;
         [TestInitialize]
         public void SetUp()
         {
-            cards = deck.Deck.ToArray();
+            playerOne.hand.Add(playerOneCardNine);
+            playerOne.hand.Add(playerOneCardFour);
+
+            playerTwo.hand.Add(playerTwoCardEight);
         }
 
 
         [TestMethod]
-        public void WarRulesTest_RoundWinner_ShouldReturnTrue()
+        public void WarRulesTest_PlayerOneWinsRound_ShouldReturnTrue()
         {
-            foreach (var item in cards)
-            {
-                Console.WriteLine($"{item.CardValue} of {item.CardSuit}");
-            }
+            Assert.IsTrue(WarRules.PlayerOneWinsRound(playerOne.hand[0], playerTwo.hand[0]));
+        }
+
+        [TestMethod]
+        public void WarRulesTest_PlayerOneWinsRound_ShouldReturnFalse()
+        {
+            Assert.IsFalse(WarRules.PlayerOneWinsRound(playerOne.hand[1], playerTwo.hand[0]));
         }
     }
 }

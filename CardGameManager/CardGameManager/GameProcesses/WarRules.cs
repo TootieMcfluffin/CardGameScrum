@@ -10,14 +10,14 @@ namespace CardGameManager.GameProcesses
     public class WarRules
     {
 
-        public static bool RoundWinner(CardModel playerOneCard, CardModel playerTwoCard)
+        public static bool PlayerOneWinsRound(CardModel playerOneCard, CardModel playerTwoCard)
         {
-            return playerOneCard.CardValue > playerTwoCard.CardValue;
+            return (int)playerOneCard.CardValue > (int)playerTwoCard.CardValue;
         }
 
         public static bool IsLoser(Player player)
         {
-            if (player.Hand.Count <= 3)
+            if (player.hand.Count <= 3)
             {
                 return true;
             }

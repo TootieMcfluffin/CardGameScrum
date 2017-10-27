@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CardGameManager.Models;
 
 namespace CardGameManager.Pages
 {
@@ -27,7 +28,7 @@ namespace CardGameManager.Pages
 
         private void BlackjackButton_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void Poker_Click(object sender, RoutedEventArgs e)
