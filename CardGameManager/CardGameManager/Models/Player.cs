@@ -12,8 +12,8 @@ namespace CardGameManager.Models
 
         public List<CardModel> Hand { get; set; }
 		
-        public int balance { get; set; }
+        public int Balance { get; set; }
 
-        public List<CardModel> secondHand = new List<CardModel>();
+        public List<CardModel> SecondHand { get; set; }
     }
 }
