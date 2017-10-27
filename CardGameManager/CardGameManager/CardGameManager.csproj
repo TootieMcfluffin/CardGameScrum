@@ -70,7 +70,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\Bool check page.xaml">
+    <Page Include="Pages\ConverterCheck.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -85,8 +85,8 @@
     <Compile Include="Models\CardModel.cs" />
     <Compile Include="Models\DeckModel.cs" />
     <Compile Include="Models\Enums.cs" />
-    <Compile Include="Pages\Bool check page.xaml.cs">
-      <DependentUpon>Bool check page.xaml</DependentUpon>
+    <Compile Include="Pages\ConverterCheck.xaml.cs">
+      <DependentUpon>ConverterCheck.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>

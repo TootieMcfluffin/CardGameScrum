@@ -28,8 +28,8 @@ namespace CardGameManager.Pages
 
         private void BlackjackButton_Click(object sender, RoutedEventArgs e)
         {
-            BlackjackMenu blackjackMenu = new BlackjackMenu();
-            this.NavigationService.Navigate(blackjackMenu);
+            //BlackjackMenu blackjackMenu = new BlackjackMenu();
+            //this.NavigationService.Navigate(blackjackMenu);
         }
 
         private void Poker_Click(object sender, RoutedEventArgs e)
@@ -39,14 +39,14 @@ namespace CardGameManager.Pages
 
         private void War_Click(object sender, RoutedEventArgs e)
         {
-            WarMenu warMenu = new WarMenu();
-            this.NavigationService.Navigate(warMenu);
+            //WarMenu warMenu = new WarMenu();
+            //this.NavigationService.Navigate(warMenu);
         }
 
         private void GoFish_Click(object sender, RoutedEventArgs e)
         {
-            GoFishMenu goFishMenu = new GoFishMenu();
-            this.NavigationService.Navigate(goFishMenu);
+            //GoFishMenu goFishMenu = new GoFishMenu();
+            //this.NavigationService.Navigate(goFishMenu);
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)

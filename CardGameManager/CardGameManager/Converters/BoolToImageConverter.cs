@@ -20,8 +20,8 @@ namespace CardGameManager.Converters
             Brush imageBrush = null;
             if (targetType == typeof(Brush))
             {
-                CardModel card = (CardModel)value;
-                if (!card.IsFlipped)
+                bool isflipped = (bool)value;
+                if (isflipped)
                 {
                     imageBrush = CardBackBrush;
                 }

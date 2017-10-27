@@ -18,8 +18,9 @@ namespace CardGameManager.Models
         {
             CardSuit = cardSuit;
             CardValue = cardValue;
-            CardValuesString = cardValue.ToString() + "_" + CardSuit.ToString();
+            CardValuesString = CardValue.ToString() + "_" + CardSuit.ToString();
             ImagePath = @"..\\..\\Images\\" + CardValuesString + ".png";
+            IsFlipped = true;
         }
     }
 }
