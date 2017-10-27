@@ -68,7 +68,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\MainMenu.xaml">
+    <Page Include="Pages\MainMenu.xaml"/>
     <Page Include="Pages\War.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -79,9 +79,9 @@
     <Compile Include="Models\CardModel.cs" />
     <Compile Include="Models\DeckModel.cs" />
     <Compile Include="Models\Enums.cs" />
-<<<<<<< HEAD
     <Compile Include="Pages\MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
+	</Compile>
     <Compile Include="Pages\War.xaml.cs">
       <DependentUpon>War.xaml</DependentUpon>
     </Compile>
@@ -110,7 +110,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-<<<<<<< HEAD
   <ItemGroup>
     <Folder Include="GameProcesses\" />
   </ItemGroup>
