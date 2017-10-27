@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CardGameManager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="700" ResizeMode="NoResize"
-        WindowStartupLocation="CenterScreen" Source="Pages/MainMenu.xaml">
+        Title="MainWindow" Height="550" Width="700" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" Source="Pages/MainMenu.xaml"
+        Background="DarkGreen">
 </NavigationWindow>
