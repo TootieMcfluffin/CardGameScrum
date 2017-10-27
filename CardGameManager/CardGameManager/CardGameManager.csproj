@@ -70,14 +70,30 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\Blackjack.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\BlackjackMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\ConverterCheck.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\GoFishMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\MainMenu.xaml" />
     <Page Include="Pages\War.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\WarMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -85,14 +101,26 @@
     <Compile Include="Models\CardModel.cs" />
     <Compile Include="Models\DeckModel.cs" />
     <Compile Include="Models\Enums.cs" />
+    <Compile Include="Pages\Blackjack.xaml.cs">
+      <DependentUpon>Blackjack.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BlackjackMenu.xaml.cs">
+      <DependentUpon>BlackjackMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ConverterCheck.xaml.cs">
       <DependentUpon>ConverterCheck.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GoFishMenu.xaml.cs">
+      <DependentUpon>GoFishMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\War.xaml.cs">
       <DependentUpon>War.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WarMenu.xaml.cs">
+      <DependentUpon>WarMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
