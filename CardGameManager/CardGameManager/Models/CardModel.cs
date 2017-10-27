@@ -11,6 +11,7 @@ namespace CardGameManager.Models
     {
         public Suit CardSuit { get; set; }
         public Value CardValue { get; set; }
+        public bool isFlipped { get; set; }
         public CardModel(Suit cardSuit, Value cardValue)
         {
             CardSuit = cardSuit;
