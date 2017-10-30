@@ -21,7 +21,7 @@ namespace CardGameManager.Pages
     public partial class War : Page
     {
         public Models.Player playerOne = new Models.Player();
-        public War()
+        public War(List<string> names)
         {
             InitializeComponent();
             //War.DataContext = playerOne;

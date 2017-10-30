@@ -27,7 +27,8 @@ namespace CardGameManager.Pages
 
         private void TwoPLayer_Click(object sender, RoutedEventArgs e)
         {
-
+            GameSetup setup = new GameSetup(2, "blackjack");
+            this.NavigationService.Navigate(setup);
         }
 
         private void Instructions_Click(object sender, RoutedEventArgs e)
@@ -38,12 +39,14 @@ namespace CardGameManager.Pages
 
         private void ThreePlayer_Click(object sender, RoutedEventArgs e)
         {
-
+            GameSetup setup = new GameSetup(3, "gofish");
+            this.NavigationService.Navigate(setup);
         }
 
         private void FourPlayer_Click(object sender, RoutedEventArgs e)
         {
-
+            GameSetup setup = new GameSetup(4, "gofish");
+            this.NavigationService.Navigate(setup);
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)

@@ -20,7 +20,7 @@ namespace CardGameManager.Pages
 	/// </summary>
 	public partial class GoFish : Page
 	{
-		public GoFish()
+		public GoFish(List<string> names)
 		{
 			InitializeComponent();
 		}
