@@ -10,9 +10,9 @@ namespace CardGameManager.GameProcesses
     public class WarRules
     {
 
-        public static bool RoundWinner(CardModel playerOneCard, CardModel playerTwoCard)
+        public static bool PlayerOneWinsRound(CardModel playerOneCard, CardModel playerTwoCard)
         {
-            return playerOneCard.CardValue > playerTwoCard.CardValue;
+            return (int)playerOneCard.CardValue > (int)playerTwoCard.CardValue;
         }
 
         public static bool IsLoser(Player player)
@@ -26,7 +26,7 @@ namespace CardGameManager.GameProcesses
 
         public static bool IsWar(CardModel playerOneCard, CardModel playerTwoCard)
         {
-            return playerOneCard.CardValue == playerTwoCard.CardValue;
+            return (int)playerOneCard.CardValue == (int)playerTwoCard.CardValue;
         }
     }
 }

@@ -16,10 +16,29 @@ namespace CardGameManager.GameProcesses
         /// <returns> true if the player has busted, false otherwise.</returns>
         public static bool CheckForBust(List<CardModel> playerHand)
         {
+
+            int handValue = HandValue(playerHand);
+            
+            if (handValue > 21)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Returns the total value of the cards in a selected players hand.
+        /// </summary>
+        /// <param name="playerHand">A list of card objects representing a players hand. </param>
+        /// <returns>The total card value of a player's hand. </returns>
+        private static int HandValue(List<CardModel> playerHand)
+        {
             int handValue = 0;
             int handSize = playerHand.Count;
             int cardCount = 0;
-
             foreach (CardModel card in playerHand)
             {
                 cardCount++;
@@ -32,14 +51,8 @@ namespace CardGameManager.GameProcesses
                     handValue += (int)card.CardValue;
                 }
             }
-            if (handValue > 21)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+
+            return handValue;
         }
 
         /// <summary>
@@ -59,6 +72,12 @@ namespace CardGameManager.GameProcesses
             }
         } 
 
+        /// <summary>
+        /// Returns an enum representing the way the current player has won or if they have lost. This enum will then be used to determine the payout to the player.
+        /// </summary>
+        /// <param name="playerHand">The card list for the player</param>
+        /// <param name="dealerHand">The card list for the dealer</param>
+        /// <returns>Enum that represents if they lost or how they won.</returns>
         public static Enums.WinConditionBlackjack CheckWinCondition(List<CardModel> playerHand, List<CardModel> dealerHand)
         {
             return Enums.WinConditionBlackjack.LOST;

@@ -62,6 +62,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Converters\BoolToImageConverter.cs" />
     <Compile Include="GameProcesses\BlackjackRules.cs" />
     <Compile Include="GameProcesses\GoFishRules.cs" />
     <Compile Include="GameProcesses\WarRules.cs" />
@@ -69,14 +70,30 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\GoFish.xaml">
+    <Page Include="Pages\Blackjack.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\BlackjackMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\ConverterCheck.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\GoFishMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\MainMenu.xaml" />
     <Page Include="Pages\War.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\WarMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -84,14 +101,26 @@
     <Compile Include="Models\CardModel.cs" />
     <Compile Include="Models\DeckModel.cs" />
     <Compile Include="Models\Enums.cs" />
-    <Compile Include="Pages\GoFish.xaml.cs">
-      <DependentUpon>GoFish.xaml</DependentUpon>
+    <Compile Include="Pages\Blackjack.xaml.cs">
+      <DependentUpon>Blackjack.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BlackjackMenu.xaml.cs">
+      <DependentUpon>BlackjackMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ConverterCheck.xaml.cs">
+      <DependentUpon>ConverterCheck.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GoFishMenu.xaml.cs">
+      <DependentUpon>GoFishMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\War.xaml.cs">
       <DependentUpon>War.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WarMenu.xaml.cs">
+      <DependentUpon>WarMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -119,6 +148,60 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\ACE_CLUBS.png" />
+    <Resource Include="Images\ACE_DIAMONDS.png" />
+    <Resource Include="Images\ACE_HEARTS.png" />
+    <Resource Include="Images\ACE_SPADES.png" />
+    <Resource Include="Images\CARD_BACK.png" />
+    <Resource Include="Images\EIGHT_CLUBS.png" />
+    <Resource Include="Images\EIGHT_DIAMONDS.png" />
+    <Resource Include="Images\EIGHT_HEARTS.png" />
+    <Resource Include="Images\EIGHT_SPADES.png" />
+    <Resource Include="Images\FIVE_CLUBS.png" />
+    <Resource Include="Images\FIVE_DIAMONDS.png" />
+    <Resource Include="Images\FIVE_HEARTS.png" />
+    <Resource Include="Images\FIVE_SPADES.png" />
+    <Resource Include="Images\FOUR_CLUBS.png" />
+    <Resource Include="Images\FOUR_DIAMONDS.png" />
+    <Resource Include="Images\FOUR_HEARTS.png" />
+    <Resource Include="Images\FOUR_SPADES.png" />
+    <Resource Include="Images\JACK_CLUBS.png" />
+    <Resource Include="Images\JACK_DIAMONDS.png" />
+    <Resource Include="Images\JACK_HEARTS.png" />
+    <Resource Include="Images\JACK_SPADES.png" />
+    <Resource Include="Images\KING_CLUBS.png" />
+    <Resource Include="Images\KING_DIAMONDS.png" />
+    <Resource Include="Images\KING_HEARTS.png" />
+    <Resource Include="Images\KING_SPADES.png" />
+    <Resource Include="Images\NINE_CLUBS.png" />
+    <Resource Include="Images\NINE_DIAMONDS.png" />
+    <Resource Include="Images\NINE_HEARTS.png" />
+    <Resource Include="Images\NINE_SPADES.png" />
+    <Resource Include="Images\QUEEN_CLUBS.png" />
+    <Resource Include="Images\QUEEN_DIAMONDS.png" />
+    <Resource Include="Images\QUEEN_HEARTS.png" />
+    <Resource Include="Images\QUEEN_SPADES.png" />
+    <Resource Include="Images\SEVEN_CLUBS.png" />
+    <Resource Include="Images\SEVEN_DIAMONDS.png" />
+    <Resource Include="Images\SEVEN_HEARTS.png" />
+    <Resource Include="Images\SEVEN_SPADES.png" />
+    <Resource Include="Images\SIX_CLUBS.png" />
+    <Resource Include="Images\SIX_DIAMONDS.png" />
+    <Resource Include="Images\SIX_HEARTS.png" />
+    <Resource Include="Images\SIX_SPADES.png" />
+    <Resource Include="Images\TEN_CLUBS.png" />
+    <Resource Include="Images\TEN_DIAMONDS.png" />
+    <Resource Include="Images\TEN_HEARTS.png" />
+    <Resource Include="Images\TEN_SPADES.png" />
+    <Resource Include="Images\THREE_CLUBS.png" />
+    <Resource Include="Images\THREE_DIAMONDS.png" />
+    <Resource Include="Images\THREE_HEARTS.png" />
+    <Resource Include="Images\THREE_SPADES.png" />
+    <Resource Include="Images\TWO_CLUBS.png" />
+    <Resource Include="Images\TWO_DIAMONDS.png" />
+    <Resource Include="Images\TWO_HEARTS.png" />
+    <Resource Include="Images\TWO_SPADES.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

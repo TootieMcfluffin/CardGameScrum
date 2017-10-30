@@ -10,10 +10,11 @@ namespace CardGameManager.Models
     {
         public string Name { get; set; }
 
-        public List<CardModel> Hand { get; set; }
-		
-        public int balance { get; set; }
-
+        //Changed the List properties to normal lists because I couldn't get WarRules to work with list properties.
+        public List<CardModel> hand = new List<CardModel>();
         public List<CardModel> secondHand = new List<CardModel>();
+
+        public int Balance { get; set; }
+
     }
 }
