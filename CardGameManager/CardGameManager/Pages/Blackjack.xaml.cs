@@ -24,5 +24,20 @@ namespace CardGameManager.Pages
         {
             InitializeComponent();
         }
+
+        private void Hit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Split_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Stay_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

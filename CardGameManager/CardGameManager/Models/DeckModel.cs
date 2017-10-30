@@ -23,6 +23,12 @@ namespace CardGameManager.Models
             }
         }
 
+        /// <summary>
+        /// A method used for shuffling the deck of cards
+        /// Begins with the first card and the last card is reached
+        /// Shuffles by taking the nth card and switching it with a random card
+        /// that comes after it.
+        /// </summary>
         public void Shuffle()
         {
             Random rand = new Random();
