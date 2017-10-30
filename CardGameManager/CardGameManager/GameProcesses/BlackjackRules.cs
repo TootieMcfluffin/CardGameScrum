@@ -62,7 +62,7 @@ namespace CardGameManager.GameProcesses
         /// <returns>A boolean that determines if the player will be eliminated.</returns>
         public static bool Elimination(int playerMoney)
         {
-            if(playerMoney <= -500)
+            if(playerMoney <= -50)
             {
                 return true;
             }
@@ -80,7 +80,118 @@ namespace CardGameManager.GameProcesses
         /// <returns>Enum that represents if they lost or how they won.</returns>
         public static Enums.WinConditionBlackjack CheckWinCondition(List<CardModel> playerHand, List<CardModel> dealerHand)
         {
-            return Enums.WinConditionBlackjack.LOST;
+            int playerHandValue = HandValue(playerHand);
+            int playerHandCount = playerHand.Count;
+            int dealerHandValue = HandValue(dealerHand);
+            int dealerHandCount = dealerHand.Count;
+
+            Enums.WinConditionBlackjack condition = Enums.WinConditionBlackjack.NULL;
+
+            if (playerHandCount == 5 && dealerHandCount == 5)
+            {
+                if (playerHandValue <= 21)
+                {
+                    if (playerHandValue == dealerHandValue)
+                    {
+                        condition = Enums.WinConditionBlackjack.NULL;
+                    }
+                    else if (playerHandValue == 21)
+                    {
+                        condition = Enums.WinConditionBlackjack.CHARLIE;
+                    }
+                    else if (playerHandValue > dealerHandValue)
+                    {
+                        condition = Enums.WinConditionBlackjack.CHARLIE;
+                    }
+                    else
+                    {
+                        condition = Enums.WinConditionBlackjack.LOST;
+                    }
+                }
+            }
+            else if (playerHandCount == 5)
+            {
+                condition = Enums.WinConditionBlackjack.CHARLIE;
+            }
+            else if (dealerHandCount == 5)
+            {
+                condition = Enums.WinConditionBlackjack.LOST;
+            }
+            else if (playerHandValue <= 21)
+            {
+                if (playerHandValue == dealerHandValue)
+                {
+                    condition = Enums.WinConditionBlackjack.NULL;
+                }
+                else if (playerHandValue == 21)
+                {
+                    condition = Enums.WinConditionBlackjack.BLACKJACK;
+                }
+                else if (playerHandValue > dealerHandValue)
+                {
+                    condition = Enums.WinConditionBlackjack.HOUSE;
+                }
+                else
+                {
+                    condition = Enums.WinConditionBlackjack.LOST;
+                }
+            }
+            else
+            {
+                condition = Enums.WinConditionBlackjack.NULL;
+            }
+
+            return condition;
+        }
+
+        /// <summary>
+        /// Manages player balance according to how the game ends.
+        /// </summary>
+        /// <param name="playerBoii"> Represents the current player from which we get the balance and bet amount</param>
+        /// <param name="winCondition"> The result of the current game for this player.</param>
+        public static void BankManager(Player playerBoii, Enums.WinConditionBlackjack winCondition)
+        {
+            if (winCondition == Enums.WinConditionBlackjack.LOST)
+            {
+                playerBoii.Balance -= playerBoii.BetAmount;
+            }
+            else if (winCondition == Enums.WinConditionBlackjack.HOUSE)
+            {
+                playerBoii.Balance += playerBoii.BetAmount * 2;
+            }
+            else if (winCondition == Enums.WinConditionBlackjack.BLACKJACK)
+            {
+                playerBoii.Balance += playerBoii.BetAmount * 3;
+            }
+            else if (winCondition == Enums.WinConditionBlackjack.CHARLIE)
+            {
+                playerBoii.Balance += playerBoii.BetAmount * 4;
+            }
+            else
+            {
+                playerBoii.Balance += playerBoii.BetAmount;
+            }
+        }
+
+        /// <summary>
+        /// Checks if the player has successfully split.
+        /// </summary>
+        /// <param name="player"> Represents the current player. We do this so we can access both hands at the same time.</param>
+        /// <returns> A boolean letting us know if the split was successful.</returns>
+        public static bool CheckForSplit(Player player)
+        {
+            if ((int)player.hand[0].CardValue == (int)player.hand[1].CardValue)
+            {
+                CardModel secondStart = player.hand[1];
+                player.hand.RemoveAt(1);
+                player.secondHand[0] = secondStart;
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

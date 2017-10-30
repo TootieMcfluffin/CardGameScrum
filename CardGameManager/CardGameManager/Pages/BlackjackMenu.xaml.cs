@@ -27,7 +27,8 @@ namespace CardGameManager.Pages
 
         private void OnePlayer_Click(object sender, RoutedEventArgs e)
         {
-
+            GameSetup setup = new GameSetup(1);
+            this.NavigationService.Navigate(setup);
         }
         private void TwoPlayer_Click(object sender, RoutedEventArgs e)
         {
@@ -53,7 +54,8 @@ namespace CardGameManager.Pages
 
         private void Instructions_Click(object sender, RoutedEventArgs e)
         {
-
+            Instructions instructions = new Instructions("Placeholder");
+            this.NavigationService.Navigate(instructions);
         }
     }
 }

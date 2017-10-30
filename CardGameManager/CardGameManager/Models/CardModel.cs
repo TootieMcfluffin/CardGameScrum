@@ -11,7 +11,9 @@ namespace CardGameManager.Models
     {
         public Suit CardSuit { get; set; }
         public Value CardValue { get; set; }
+        //A bool to determine whether or not the cards face is shown
         public bool IsFlipped { get; set; }
+        //A string used for determining the image to use for the card
         public string CardValuesString { get; set; }
         public string ImagePath { get; set; }
         public CardModel(Suit cardSuit, Value cardValue)
