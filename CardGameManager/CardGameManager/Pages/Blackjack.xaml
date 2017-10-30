@@ -5,10 +5,284 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:CardGameManager.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="500" d:DesignWidth="700"
-      Title="Blackjack" ShowsNavigationUI="False">
+      d:DesignHeight="500" d:DesignWidth="1200"
+      Title="Blackjack" ShowsNavigationUI="False" Background="DarkGreen">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="10*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+                <Label x:Name="PlayerTurn"
+                       FontFamily="Onyx"
+                       FontSize="36"/>
+                <Label x:Name="BetAmount"
+                       FontFamily="Onyx"
+                       FontSize="36"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2">
+                <Label x:Name="PlayerBank"
+                       FontFamily="Onyx"
+                       FontSize="36"/>
+            </StackPanel>
+            <Grid x:Name="HouseHand" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid x:Name="PlayerOneSecondHand" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                <Grid x:Name="PlayerTwoSecondHand" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                <Grid x:Name="PlayerThreeSecondHand" Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                <Grid x:Name="PlayerFourSecondHand" Grid.Column="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                <Grid x:Name="PlayerFiveSecondHand" Grid.Column="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid x:Name="PlayerOneHand" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                <Grid x:Name="PlayerTwoHand" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="48"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                <Grid x:Name="PlayerThreeHand" Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                <Grid x:Name="PlayerFourHand" Grid.Column="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                <Grid x:Name="PlayerFiveHand" Grid.Column="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0"
+                           x:Name="PlayerOneName"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontFamily="Onyx"
+                           FontSize="24"/>
+                    <Label Grid.Column="1"
+                           x:Name="PlayerTwoName"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontFamily="Onyx"
+                           FontSize="24"/>
+                    <Label Grid.Column="2"
+                           x:Name="PlayerThreeName"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontFamily="Onyx"
+                           FontSize="24"/>
+                    <Label Grid.Column="3"
+                           x:Name="PlayerFourName"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontFamily="Onyx"
+                           FontSize="24"/>
+                    <Label Grid.Column="4"
+                           x:Name="PlayerFiveName"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontFamily="Onyx"
+                           FontSize="24"/>
+                </Grid>
+                <StackPanel Orientation="Horizontal"
+                            Grid.Row="1" HorizontalAlignment="Center">
+                    <Button Height="50"
+                    Width="200"
+                    Background="Maroon"
+                    BorderBrush="Black"
+                    x:Name="Hit"
+                    Click="Hit_Click"
+                    Margin="5">
+                        <Grid>
+                            <Label Content="HIT"
+                           FontFamily="Onyx"
+                           FontSize="40"
+                           Foreground="Gold"
+                           Padding="0 0 0 0"
+                           Margin="0 -2 0 0"/>
+                            <Label Content="HIT"
+                           FontFamily="Onyx"
+                           FontSize="40"
+                           Foreground="Red"
+                           Margin="0 2 0 0"
+                           Padding="0 0 0 0"/>
+                            <Label Content="HIT"
+                           FontFamily="Onyx"
+                           FontSize="40"
+                           Padding="0 0 0 0"/>
+                        </Grid>
+                    </Button>
+                    <Button Height="50"
+                    Width="200"
+                    Background="Maroon"
+                    BorderBrush="Black"
+                    x:Name="Stay"
+                    Click="Stay_Click"
+                    Margin="5">
+                        <Grid>
+                            <Label Content="STAY"
+                           FontFamily="Onyx"
+                           FontSize="40"
+                           Foreground="Gold"
+                           Padding="0 0 0 0"
+                           Margin="0 -2 0 0"/>
+                            <Label Content="STAY"
+                           FontFamily="Onyx"
+                           FontSize="40"
+                           Foreground="Red"
+                           Margin="0 2 0 0"
+                           Padding="0 0 0 0"/>
+                            <Label Content="STAY"
+                           FontFamily="Onyx"
+                           FontSize="40"
+                           Padding="0 0 0 0"/>
+                        </Grid>
+                    </Button>
+                    <Button Height="50"
+                    Width="200"
+                    Background="Maroon"
+                    BorderBrush="Black"
+                    x:Name="Split"
+                    Click="Split_Click"
+                    Margin="5"
+                            IsEnabled="False">
+                        <Grid>
+                            <Label Content="SPLIT"
+                           FontFamily="Onyx"
+                           FontSize="40"
+                           Foreground="Gold"
+                           Padding="0 0 0 0"
+                           Margin="0 -2 0 0"/>
+                            <Label Content="SPLIT"
+                           FontFamily="Onyx"
+                           FontSize="40"
+                           Foreground="Red"
+                           Margin="0 2 0 0"
+                           Padding="0 0 0 0"/>
+                            <Label Content="SPLIT"
+                           FontFamily="Onyx"
+                           FontSize="40"
+                           Padding="0 0 0 0"/>
+                        </Grid>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

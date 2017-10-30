@@ -16,28 +16,19 @@ using System.Windows.Shapes;
 namespace CardGameManager.Pages
 {
     /// <summary>
-    /// Interaction logic for Blackjack.xaml
+    /// Interaction logic for Instructions.xaml
     /// </summary>
-    public partial class Blackjack : Page
+    public partial class Instructions : Page
     {
-        public Blackjack()
+        public Instructions(string rules)
         {
             InitializeComponent();
+            RulesBox.Text = rules;
         }
 
-        private void Hit_Click(object sender, RoutedEventArgs e)
+        private void Return_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Split_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Stay_Click(object sender, RoutedEventArgs e)
-        {
-
+            this.NavigationService.GoBack();
         }
     }
 }
