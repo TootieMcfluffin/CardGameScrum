@@ -8,5 +8,8 @@ namespace CardGameManager.GameProcesses
 {
 	public class GoFishRules
 	{
+
+
+
 	}
 }
