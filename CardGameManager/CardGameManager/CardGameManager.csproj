@@ -82,6 +82,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\GameSetup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\GoFishMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -113,6 +117,9 @@
     </Compile>
     <Compile Include="Pages\ConverterCheck.xaml.cs">
       <DependentUpon>ConverterCheck.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GameSetup.xaml.cs">
+      <DependentUpon>GameSetup.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\GoFishMenu.xaml.cs">
       <DependentUpon>GoFishMenu.xaml</DependentUpon>
