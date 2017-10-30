@@ -53,7 +53,8 @@ namespace CardGameManager.Pages
 
         private void Instructions_Click(object sender, RoutedEventArgs e)
         {
-
+            Instructions instructions = new Instructions("Placeholder");
+            this.NavigationService.Navigate(instructions);
         }
     }
 }
