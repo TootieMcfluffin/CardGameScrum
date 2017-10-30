@@ -9,26 +9,18 @@ namespace CardGameManagerTests
     [TestClass]
     public class CardGameManagerTests
     {
-        static CardModel playerOneCardNine = new CardModel(Enums.Suit.CLUBS, Enums.Value.NINE);
-        static CardModel playerOneCardFour = new CardModel(Enums.Suit.CLUBS, Enums.Value.FOUR);        
-        static CardModel playerOneCardFive = new CardModel(Enums.Suit.DIAMONDS, Enums.Value.FIVE);        
-        static CardModel playerOneCardSeven = new CardModel(Enums.Suit.HEARTS, Enums.Value.SEVEN);
-
-        static CardModel playerTwoCardEight = new CardModel(Enums.Suit.CLUBS, Enums.Value.EIGHT);
-        static CardModel playerTwoCardFour = new CardModel(Enums.Suit.HEARTS, Enums.Value.FOUR);
-
         Player playerOne = new Player();
         Player playerTwo = new Player();
         [TestInitialize]
         public void WarHand()
         {
-            playerOne.hand.Add(playerOneCardNine);
-            playerOne.hand.Add(playerOneCardFour);
-            playerOne.hand.Add(playerOneCardSeven);
-            playerOne.hand.Add(playerOneCardFive);
+            playerOne.hand.Add(new CardModel(Enums.Suit.CLUBS, Enums.Value.NINE));
+            playerOne.hand.Add(new CardModel(Enums.Suit.CLUBS, Enums.Value.FOUR));
+            playerOne.hand.Add(new CardModel(Enums.Suit.HEARTS, Enums.Value.SEVEN));
+            playerOne.hand.Add(new CardModel(Enums.Suit.DIAMONDS, Enums.Value.FIVE));
 
-            playerTwo.hand.Add(playerTwoCardEight);
-            playerTwo.hand.Add(playerTwoCardFour);
+            playerTwo.hand.Add(new CardModel(Enums.Suit.CLUBS, Enums.Value.EIGHT));
+            playerTwo.hand.Add(new CardModel(Enums.Suit.HEARTS, Enums.Value.FOUR));
         }
 
         public void ClearHands()
@@ -126,6 +118,35 @@ namespace CardGameManagerTests
             playerOne.Balance = -600;
             Assert.IsTrue(BlackjackRules.Elimination(playerOne.Balance));
         }
-        
+
+        [TestMethod]
+        public void BlackjackRulesTest_Elimination_ShouldReturnTrueWithBalanceNegativeFifty()
+        {
+            playerOne.Balance = -50;
+            Assert.IsTrue(BlackjackRules.Elimination(playerOne.Balance));
+        }
+
+        [TestMethod]
+        public void BlackjackRulesTest_CheckWinCondition_ShouldReturnNull()
+        {
+            Enums.WinConditionBlackjack expectedValue = Enums.WinConditionBlackjack.NULL;
+            ClearHands();
+
+            playerOne.hand.Add(new CardModel(Enums.Suit.CLUBS, Enums.Value.TWO));
+            playerOne.hand.Add(new CardModel(Enums.Suit.DIAMONDS, Enums.Value.TWO));
+            playerOne.hand.Add(new CardModel(Enums.Suit.CLUBS, Enums.Value.THREE));
+            playerOne.hand.Add(new CardModel(Enums.Suit.HEARTS, Enums.Value.FOUR));
+            playerOne.hand.Add(new CardModel(Enums.Suit.SPADES, Enums.Value.FIVE));
+
+            playerTwo.hand.Add(new CardModel(Enums.Suit.HEARTS, Enums.Value.TWO));
+            playerTwo.hand.Add(new CardModel(Enums.Suit.SPADES, Enums.Value.TWO));
+            playerTwo.hand.Add(new CardModel(Enums.Suit.HEARTS, Enums.Value.THREE));
+            playerTwo.hand.Add(new CardModel(Enums.Suit.SPADES, Enums.Value.FOUR));
+            playerTwo.hand.Add(new CardModel(Enums.Suit.HEARTS, Enums.Value.FIVE));
+
+            Enums.WinConditionBlackjack actualValue = BlackjackRules.CheckWinCondition(playerOne.hand, playerTwo.hand);
+
+            Assert.AreEqual(expectedValue, actualValue);
+        }
     }
 }
