@@ -8,9 +8,7 @@
       d:DesignHeight="300" d:DesignWidth="300"
       Title="GoFish">
 
-    <Grid x:Name="GoFishGrid"
-		  Background="Green">
-		
+    <Grid>
         
     </Grid>
 </Page>
