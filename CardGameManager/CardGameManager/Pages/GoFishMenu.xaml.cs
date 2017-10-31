@@ -21,10 +21,10 @@ namespace CardGameManager.Pages
     public partial class GoFishMenu : Page
     {
 
-		// Need to make GetCurrentPlayer method.
-		// Need to make GetPlayerAsked method.
-		// Need to make change player method.
-		// Have kade teach me how all of this navigation mumbo jumbo works.
+		// Need to make GetCurrentPlayer() method.
+		// Need to make GetPlayerAsked() method.
+		// Need to make ChangePlayer() method.
+		// Have kade teach me how all() of this navigation mumbo jumbo works.
 
         public GoFishMenu()
         {
