@@ -22,6 +22,9 @@ namespace CardGameManager.Models
 
         public bool Bust { get; set; }
 
+        /// <summary>
+        /// Used in war to shuffle the pile of cards won into the players hand
+        /// </summary>
         public void ShuffleSecondHand()
         {
             Random rand = new Random();
