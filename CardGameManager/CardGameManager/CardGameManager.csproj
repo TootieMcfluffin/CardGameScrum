@@ -121,7 +121,6 @@
     <Compile Include="Pages\GameSetup.xaml.cs">
       <DependentUpon>GameSetup.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\GoFish.xaml.cs" />
     <Compile Include="Pages\GoFishMenu.xaml.cs">
       <DependentUpon>GoFishMenu.xaml</DependentUpon>
     </Compile>
