@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:CardGameManager.Pages"
+      xmlns:cv="clr-namespace:CardGameManager.Converters"
       mc:Ignorable="d" 
       d:DesignHeight="500" d:DesignWidth="900" ShowsNavigationUI="False"
       Background="DarkGreen"
@@ -14,15 +15,106 @@
             <RowDefinition Height="2*"/>
             <RowDefinition/>
             <RowDefinition Height="2*"/>
+            <RowDefinition/>
             <RowDefinition Height="2*"/>
             <RowDefinition/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="2">
+        <Grid x:Name="PlayerOneHand"
+              Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="pOnePlayDeckCount"
+                   FontFamily="Onyx"
+                   FontSize="35"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Right"
+                   Content="Cards Remaining: 26"/>
+            <Label VerticalAlignment="Center"
+                   Grid.Column="1"
+                   HorizontalAlignment="Right"
+                   x:Name="PlayerOneDeck"
+                   Margin="0 0 5 0"
+                   Height="85px"
+                   Width="60px">
+                <Label.Background>
+                    <ImageBrush ImageSource="../Images/CARD_BACK.png"/>
+                </Label.Background>
+            </Label>
+            <Label VerticalAlignment="Center"
+                   Grid.Column="2"
+                   HorizontalAlignment="Left"
+                   x:Name="PlayerOneWinnings"
+                   Margin="5 0 0 0"
+                   Height="85px"
+                   Width="60px"/>
+            <Label x:Name="pOnePlayWinCount"
+                   FontFamily="Onyx"
+                   FontSize="35"
+                   Grid.Column="3"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"
+                   Content="Cards Won: 0"/>
+        </Grid>
+        <Grid x:Name="PlayerTwoHand"
+              Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="pTwoPlayDeckCount"
+                   Grid.Column="3"
+                   FontFamily="Onyx"
+                   FontSize="35"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"
+                   Content="Cards Remaining: 26"/>
+            <Label VerticalAlignment="Center"
+                   Grid.Column="2"
+                   HorizontalAlignment="Left"
+                   x:Name="PlayerTwoDeck"
+                   Margin="5 0 0 0"
+                   Height="85px"
+                   Width="60px">
+                <Label.Background>
+                    <ImageBrush ImageSource="../Images/CARD_BACK.png"/>
+                </Label.Background>
+            </Label>
+            <Label VerticalAlignment="Center"
+                   Grid.Column="1"
+                   HorizontalAlignment="Right"
+                   x:Name="PlayerTwoWinnings"
+                   Margin="0 0 5 0"
+                   Height="85px"
+                   Width="60px"/>
+            <Label x:Name="pTwoPlayWinCount"
+                   FontFamily="Onyx"
+                   FontSize="35"
+                   Grid.Column="0"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Right"
+                   Content="Cards Won: 0"/>
+        </Grid>
+
+        <Grid Grid.Row="2"
+              x:Name="PlayerTwoBoard">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            <Label VerticalAlignment="Center"
+                   Grid.Column="1"
+                   HorizontalAlignment="Left"
+                   x:Name="PlayerTwoCurrentCard"
+                   Height="85px"
+                   Margin="5 0 0 0"
+                   Width="60px"/>
             <Grid Grid.Column="0"
                   x:Name="PlayerTwoBattle">
                 <Grid.ColumnDefinitions>
@@ -30,13 +122,38 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+                <Label Grid.Column="0"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Height="85px"
+                       Width="60px"
+                       x:Name="pTwoSlotThree"/>
+                <Label Grid.Column="1"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Height="85px"
+                       Width="60px"
+                       x:Name="pTwoSlotTwo"/>
+                <Label Grid.Column="2"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Height="85px"
+                       Width="60px"
+                       x:Name="pTwoSlotOne"/>
             </Grid>
         </Grid>
-        <Grid Grid.Row="3">
+        <Grid Grid.Row="4"
+              x:Name="PlayerOneBoard">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            <Label VerticalAlignment="Center"
+                   HorizontalAlignment="Right"
+                   x:Name="PlayerOneCurrentCard"
+                   Margin="0 0 5 0"
+                   Height="85px"
+                   Width="60px"/>
             <Grid Grid.Column="1"
                   x:Name="PlayerOneBattle">
                 <Grid.ColumnDefinitions>
@@ -44,6 +161,24 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+                <Label Grid.Column="2"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Height="85px"
+                       Width="60px"
+                       x:Name="pOneSlotThree"/>
+                <Label Grid.Column="1"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Height="85px"
+                       Width="60px"
+                       x:Name="pOneSlotTwo"/>
+                <Label Grid.Column="0"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Height="85px"
+                       Width="60px"
+                       x:Name="pOneSlotOne"/>
             </Grid>
         </Grid>
         <Label Grid.Row="1"
@@ -52,11 +187,38 @@
                FontSize="35"
                VerticalAlignment="Center"
                HorizontalAlignment="Right"/>
-        <Label Grid.Row="4"
+        <Label Grid.Row="5"
                x:Name="PlayerOneName"
                FontFamily="Onyx"
                FontSize="35"
                VerticalAlignment="Center"
                HorizontalAlignment="Left"/>
+        <Button Height="35"
+                Grid.Row="3"
+                    Width="100"
+                    Background="Maroon"
+                    BorderBrush="Black"
+                    x:Name="Advance"
+                    Click="Advance_Click"
+                    Margin="5">
+            <Grid>
+                <Label Content="ADVANCE"
+                           FontFamily="Onyx"
+                           FontSize="30"
+                           Foreground="Gold"
+                           Padding="0 0 0 0"
+                           Margin="0 -1 0 0"/>
+                <Label Content="ADVANCE"
+                           FontFamily="Onyx"
+                           FontSize="30"
+                           Foreground="Red"
+                           Margin="0 1 0 0"
+                           Padding="0 0 0 0"/>
+                <Label Content="ADVANCE"
+                           FontFamily="Onyx"
+                           FontSize="30"
+                           Padding="0 0 0 0"/>
+            </Grid>
+        </Button>
     </Grid>
 </Page>

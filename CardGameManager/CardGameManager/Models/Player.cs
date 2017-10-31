@@ -19,5 +19,19 @@ namespace CardGameManager.Models
         public int BetAmount { get; set; }
 
         public bool Bust { get; set; }
+
+        public void ShuffleSecondHand()
+        {
+            Random rand = new Random();
+            for (int i = 0; i < secondHand.Count; i++)
+            {
+                int randNum = rand.Next(i, secondHand.Count);
+                CardModel tempCard = secondHand.ElementAt(randNum);
+                secondHand.Insert(randNum, secondHand.ElementAt(i));
+                secondHand.RemoveAt(randNum + 1);
+                secondHand.RemoveAt(i);
+                secondHand.Insert(i, tempCard);
+            }
+        }
     }
 }
