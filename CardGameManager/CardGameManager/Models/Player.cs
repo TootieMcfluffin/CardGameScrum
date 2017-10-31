@@ -17,5 +17,7 @@ namespace CardGameManager.Models
         public int Balance { get; set; }
 
         public int BetAmount { get; set; }
+
+        public bool Bust { get; set; }
     }
 }

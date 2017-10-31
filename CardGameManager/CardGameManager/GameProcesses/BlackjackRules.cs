@@ -99,7 +99,7 @@ namespace CardGameManager.GameProcesses
                     {
                         condition = Enums.WinConditionBlackjack.CHARLIE;
                     }
-                    if (playerHandValue > dealerHandValue)
+                    else if (playerHandValue > dealerHandValue)
                     {
                         condition = Enums.WinConditionBlackjack.CHARLIE;
                     }
