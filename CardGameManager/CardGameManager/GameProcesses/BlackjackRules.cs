@@ -34,7 +34,7 @@ namespace CardGameManager.GameProcesses
         /// </summary>
         /// <param name="playerHand">A list of card objects representing a players hand. </param>
         /// <returns>The total card value of a player's hand. </returns>
-        private static int HandValue(List<CardModel> playerHand)
+        public static int HandValue(List<CardModel> playerHand)
         {
             int handValue = 0;
             int handSize = playerHand.Count;
@@ -85,7 +85,7 @@ namespace CardGameManager.GameProcesses
             int dealerHandValue = HandValue(dealerHand);
             int dealerHandCount = dealerHand.Count;
 
-            Enums.WinConditionBlackjack condition = Enums.WinConditionBlackjack.NULL;
+            Enums.WinConditionBlackjack condition = Enums.WinConditionBlackjack.DRAW;
 
             if (playerHandCount == 5 && dealerHandCount == 5)
             {
@@ -93,7 +93,7 @@ namespace CardGameManager.GameProcesses
                 {
                     if (playerHandValue == dealerHandValue)
                     {
-                        condition = Enums.WinConditionBlackjack.NULL;
+                        condition = Enums.WinConditionBlackjack.DRAW;
                     }
                     else if (playerHandValue == 21)
                     {
@@ -121,7 +121,7 @@ namespace CardGameManager.GameProcesses
             {
                 if (playerHandValue == dealerHandValue)
                 {
-                    condition = Enums.WinConditionBlackjack.NULL;
+                    condition = Enums.WinConditionBlackjack.DRAW;
                 }
                 else if (playerHandValue == 21)
                 {

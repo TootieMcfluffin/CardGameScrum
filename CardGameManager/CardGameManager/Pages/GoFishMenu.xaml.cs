@@ -21,11 +21,6 @@ namespace CardGameManager.Pages
     public partial class GoFishMenu : Page
     {
 
-		// Need to make GetCurrentPlayer() method.
-		// Need to make GetPlayerAsked() method.
-		// Need to make ChangePlayer() method.
-		// Have kade teach me how all() of this navigation mumbo jumbo works.
-
         public GoFishMenu()
         {
             InitializeComponent();
@@ -33,7 +28,7 @@ namespace CardGameManager.Pages
 
         private void TwoPLayer_Click(object sender, RoutedEventArgs e)
         {
-            GameSetup setup = new GameSetup(2, "blackjack");
+            GameSetup setup = new GameSetup(2, "gofish");
             this.NavigationService.Navigate(setup);
         }
 
@@ -60,5 +55,7 @@ namespace CardGameManager.Pages
             MainMenu mainMenu = new MainMenu();
             this.NavigationService.Navigate(mainMenu);
         }
+
+		
     }
 }
