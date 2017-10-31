@@ -27,7 +27,7 @@ namespace CardGameManager.Pages
 
         private void Instructions_Click(object sender, RoutedEventArgs e)
         {
-            Instructions instructions = new Instructions("Play against your friends in the exciting game of war." +
+            Instructions instructions = new Instructions("Play against your friends in the everlasting game of War." +
                 "\nBoth players receive 26 cards. This is their deck." +
                 "\nThey will flip the top card of their deck at the same time." +
                 "\nWhoever has the higher card gets both cards and puts them into their reserve deck." +

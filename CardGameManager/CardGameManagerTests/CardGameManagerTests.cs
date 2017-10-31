@@ -127,9 +127,9 @@ namespace CardGameManagerTests
         }
 
         [TestMethod]
-        public void BlackjackRulesTest_CheckWinCondition_BothCharlieShouldReturnNull()
+        public void BlackjackRulesTest_CheckWinCondition_BothCharlieShouldReturnDraw()
         {
-            Enums.WinConditionBlackjack expectedValue = Enums.WinConditionBlackjack.NULL;
+            Enums.WinConditionBlackjack expectedValue = Enums.WinConditionBlackjack.DRAW;
             ClearHands();
 
             playerOne.hand.Add(new CardModel(Enums.Suit.CLUBS, Enums.Value.TWO));
@@ -261,9 +261,9 @@ namespace CardGameManagerTests
         }
 
         [TestMethod]
-        public void BlackjackRulesTest_CheckWinCondition_NoCharlieShouldReturnNull()
+        public void BlackjackRulesTest_CheckWinCondition_NoCharlieShouldReturnDraw()
         {
-            Enums.WinConditionBlackjack expectedValue = Enums.WinConditionBlackjack.NULL;
+            Enums.WinConditionBlackjack expectedValue = Enums.WinConditionBlackjack.DRAW;
             ClearHands();
 
             playerOne.hand.Add(new CardModel(Enums.Suit.CLUBS, Enums.Value.TWO));

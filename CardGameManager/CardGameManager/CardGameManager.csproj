@@ -65,6 +65,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Converters\BoolToImageConverter.cs" />
     <Compile Include="GameProcesses\BlackjackGame.cs" />
     <Compile Include="GameProcesses\BlackjackRules.cs" />
     <Compile Include="GameProcesses\GoFishRules.cs" />
@@ -86,10 +87,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\GameSetup.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\GoFish.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -128,9 +125,6 @@
     </Compile>
     <Compile Include="Pages\GameSetup.xaml.cs">
       <DependentUpon>GameSetup.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\GoFish.xaml.cs">
-      <DependentUpon>GoFish.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\GoFishMenu.xaml.cs">
       <DependentUpon>GoFishMenu.xaml</DependentUpon>
@@ -172,9 +166,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Converters\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\ACE_CLUBS.png" />
     <Resource Include="Images\ACE_DIAMONDS.png" />
