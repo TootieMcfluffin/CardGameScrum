@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CardGameManager.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,11 +21,23 @@ namespace CardGameManager.Pages
     /// </summary>
     public partial class War : Page
     {
-        public Models.Player playerOne = new Models.Player();
+        public Player playerOne = new Player();
+        public Player playerTwo = new Player();
         public War(List<string> names)
         {
             InitializeComponent();
-            //War.DataContext = playerOne;
+            if(names.Count == 1)
+            {
+                playerOne.Name = names.ElementAt(0);
+                playerTwo.Name = "Computer";
+            }
+            else
+            {
+                playerOne.Name = names.ElementAt(0);
+                playerTwo.Name = names.ElementAt(1);
+            }
+            PlayerOneName.Content = playerOne.Name;
+            PlayerTwoName.Content = playerTwo.Name;
         }
     }
 }
