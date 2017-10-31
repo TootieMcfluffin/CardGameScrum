@@ -138,7 +138,7 @@ namespace CardGameManager.GameProcesses
             }
             else
             {
-                condition = Enums.WinConditionBlackjack.NULL;
+                condition = Enums.WinConditionBlackjack.LOST;
             }
 
             return condition;
@@ -184,7 +184,7 @@ namespace CardGameManager.GameProcesses
             {
                 CardModel secondStart = player.hand[1];
                 player.hand.RemoveAt(1);
-                player.secondHand[0] = secondStart;
+                player.secondHand.Add(secondStart);
 
                 return true;
             }
