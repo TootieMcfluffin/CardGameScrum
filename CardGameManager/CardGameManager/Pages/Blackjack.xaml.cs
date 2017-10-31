@@ -23,6 +23,30 @@ namespace CardGameManager.Pages
         public Blackjack(List<string> names)
         {
             InitializeComponent();
+            for(int i = 0; i < names.Count; i++)
+            {
+                if(i == 0)
+                {
+                    PlayerOneName.Content = names.ElementAt(i);
+                }
+                else if (i == 1)
+                {
+                    PlayerTwoName.Content = names.ElementAt(i);
+                }
+                else if (i == 2)
+                {
+                    PlayerThreeName.Content = names.ElementAt(i);
+                }
+                else if (i == 3)
+                {
+                    PlayerFourName.Content = names.ElementAt(i);
+                }
+                else if (i == 4)
+                {
+                    PlayerFiveName.Content = names.ElementAt(i);
+                }
+            }
+            
         }
 
         private void Hit_Click(object sender, RoutedEventArgs e)

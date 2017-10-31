@@ -98,7 +98,7 @@ namespace CardGameManager.Pages
         {
             if(playerOneName != null)
             {
-                if(string.IsNullOrEmpty(playerOneName.Text))
+                if(string.IsNullOrEmpty(playerOneName.Text.Trim()))
                 {
                     names.Add("Player One");
                 }
@@ -109,7 +109,7 @@ namespace CardGameManager.Pages
             }
             if (playerTwoName != null)
             {
-                if (string.IsNullOrEmpty(playerTwoName.Text))
+                if (string.IsNullOrEmpty(playerTwoName.Text.Trim()))
                 {
                     names.Add("Player Two");
                 }
@@ -120,7 +120,7 @@ namespace CardGameManager.Pages
             }
             if (playerThreeName != null)
             {
-                if (string.IsNullOrEmpty(playerThreeName.Text))
+                if (string.IsNullOrEmpty(playerThreeName.Text.Trim()))
                 {
                     names.Add("Player Three");
                 }
@@ -131,7 +131,7 @@ namespace CardGameManager.Pages
             }
             if (playerFourName != null)
             {
-                if (string.IsNullOrEmpty(playerFourName.Text))
+                if (string.IsNullOrEmpty(playerFourName.Text.Trim()))
                 {
                     names.Add("Player Four");
                 }
@@ -142,7 +142,7 @@ namespace CardGameManager.Pages
             }
             if (playerFiveName != null)
             {
-                if (string.IsNullOrEmpty(playerFiveName.Text))
+                if (string.IsNullOrEmpty(playerFiveName.Text.Trim()))
                 {
                     names.Add("Player Five");
                 }
@@ -153,7 +153,7 @@ namespace CardGameManager.Pages
             }
             if (playerSixName != null)
             {
-                if (string.IsNullOrEmpty(playerSixName.Text))
+                if (string.IsNullOrEmpty(playerSixName.Text.Trim()))
                 {
                     names.Add("Player Six");
                 }
