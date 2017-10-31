@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using CardGameManager.Models;
 using System.Collections.Generic;
 using System.Globalization;

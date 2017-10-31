@@ -66,6 +66,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Converters\BoolToImageConverter.cs" />
+    <Compile Include="GameProcesses\BlackjackGame.cs" />
     <Compile Include="GameProcesses\BlackjackRules.cs" />
     <Compile Include="GameProcesses\GoFishRules.cs" />
     <Compile Include="GameProcesses\WarRules.cs" />

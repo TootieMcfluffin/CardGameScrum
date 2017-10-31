@@ -35,7 +35,7 @@ namespace CardGameManager.Models
 
         public enum WinConditionBlackjack
         {
-            NULL,
+            DRAW,
             HOUSE,
             BLACKJACK,
             CHARLIE,
