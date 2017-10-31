@@ -27,24 +27,28 @@ namespace CardGameManager.Pages
 
         private void OnePlayer_Click(object sender, RoutedEventArgs e)
         {
-            GameSetup setup = new GameSetup(1);
+            GameSetup setup = new GameSetup(1, "blackjack");
             this.NavigationService.Navigate(setup);
         }
         private void TwoPlayer_Click(object sender, RoutedEventArgs e)
         {
-
+            GameSetup setup = new GameSetup(2, "blackjack");
+            this.NavigationService.Navigate(setup);
         }
         private void ThreePlayer_Click(object sender, RoutedEventArgs e)
         {
-
+            GameSetup setup = new GameSetup(3, "blackjack");
+            this.NavigationService.Navigate(setup);
         }
         private void FourPlayer_Click(object sender, RoutedEventArgs e)
         {
-
+            GameSetup setup = new GameSetup(4, "blackjack");
+            this.NavigationService.Navigate(setup);
         }
         private void FivePlayer_Click(object sender, RoutedEventArgs e)
         {
-
+            GameSetup setup = new GameSetup(5, "blackjack");
+            this.NavigationService.Navigate(setup);
         }
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {

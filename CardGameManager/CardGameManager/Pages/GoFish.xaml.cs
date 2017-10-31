@@ -15,16 +15,14 @@ using System.Windows.Shapes;
 
 namespace CardGameManager.Pages
 {
-    /// <summary>
-    /// Interaction logic for War.xaml
-    /// </summary>
-    public partial class War : Page
-    {
-        public Models.Player playerOne = new Models.Player();
-        public War(List<string> names)
-        {
-            InitializeComponent();
-            //War.DataContext = playerOne;
-        }
-    }
+	/// <summary>
+	/// Interaction logic for GoFish.xaml
+	/// </summary>
+	public partial class GoFish : Page
+	{
+		public GoFish(List<string> names)
+		{
+			InitializeComponent();
+		}
+	}
 }

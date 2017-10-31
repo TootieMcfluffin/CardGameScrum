@@ -33,12 +33,14 @@ namespace CardGameManager.Pages
 
         private void PVP_Click(object sender, RoutedEventArgs e)
         {
-
+            GameSetup setup = new GameSetup(2, "war");
+            this.NavigationService.Navigate(setup);
         }
 
         private void PVC_Click(object sender, RoutedEventArgs e)
         {
-
+            GameSetup setup = new GameSetup(1, "war");
+            this.NavigationService.Navigate(setup);
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)

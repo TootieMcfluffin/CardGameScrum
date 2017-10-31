@@ -20,7 +20,7 @@ namespace CardGameManager.Pages
     /// </summary>
     public partial class Blackjack : Page
     {
-        public Blackjack()
+        public Blackjack(List<string> names)
         {
             InitializeComponent();
         }

@@ -6,10 +6,64 @@
       xmlns:local="clr-namespace:CardGameManager.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="500" d:DesignWidth="700"
-      Title="GameSetup" ShowsNavigationUI="False">
+      Title="GameSetup" ShowsNavigationUI="False" Background="DarkGreen">
 
-    <StackPanel x:Name="MainPanel" 
-                Orientation="Vertical">
-        
-    </StackPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0"
+               Content="ENTER A NAME"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               FontSize="60"
+               Margin="0 -2 0 0"
+               Foreground="Gold"
+               FontFamily="Onyx"/>
+        <Label Grid.Row="0"
+               Content="ENTER A NAME"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               FontSize="60"
+               Margin="0 2 0 0"
+               Foreground="Red"
+               FontFamily="Onyx"/>
+        <Label Grid.Row="0"
+               Content="ENTER A NAME"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               FontSize="60"
+               FontFamily="Onyx"/>
+        <StackPanel x:Name="MainPanel" Grid.Row="1"
+                Orientation="Vertical"/>
+        <Button Height="50"
+                Grid.Row="2"
+                    Width="200"
+                    Background="Maroon"
+                    BorderBrush="Black"
+                    x:Name="Play"
+                    Click="Play_Click"
+                    Margin="3">
+            <Grid>
+                <Label Content="PLAY"
+                           FontFamily="Onyx"
+                           FontSize="40"
+                           Foreground="Gold"
+                           Padding="0 0 0 0"
+                           Margin="0 -2 0 0"/>
+                <Label Content="PLAY"
+                           FontFamily="Onyx"
+                           FontSize="40"
+                           Foreground="Red"
+                           Margin="0 2 0 0"
+                           Padding="0 0 0 0"/>
+                <Label Content="PLAY"
+                           FontFamily="Onyx"
+                           FontSize="40"
+                           Padding="0 0 0 0"/>
+            </Grid>
+        </Button>
+    </Grid>
 </Page>
