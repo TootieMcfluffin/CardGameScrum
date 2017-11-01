@@ -1,13 +1,14 @@
 ﻿using CardGameManager.GameProcesses;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CardGameManager.Models
 {
-    public class Player
+    public class Player : INotifyPropertyChanged
     {
         public bool IsDealer { get; set; } = false;
         public string Name { get; set; }
@@ -16,9 +17,34 @@ namespace CardGameManager.Models
         public List<CardModel> hand = new List<CardModel>();
         public List<CardModel> secondHand = new List<CardModel>();
 
-        public int Balance { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
 
-        public int BetAmount { get; set; }
+        private int balance;
+        public int Balance
+        {
+            get
+            {
+                return balance;
+            }
+            set
+            {
+                balance = value;
+                OnPropertyChanged("Balance");
+            }
+        }
+        private int betAmount;
+        public int BetAmount
+        {
+            get
+            {
+                return betAmount;
+            }
+            set
+            {
+                betAmount = value;
+                OnPropertyChanged("BetAmount");
+            }
+        }
 
         public bool Bust { get; set; }
 
@@ -51,7 +77,6 @@ namespace CardGameManager.Models
             bool hit = false;
             if (BlackjackRules.HandValue(this.hand) < 17)
             {
-                //call Hit method
                 hit = true;
             }
             else
@@ -60,6 +85,12 @@ namespace CardGameManager.Models
             }
 
             return hit;
+        }
+
+        private void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

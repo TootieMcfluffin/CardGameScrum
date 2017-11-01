@@ -46,7 +46,7 @@ namespace CardGameManager.GameProcesses
                 {
                     handValue += 11;
                 }
-                else if (card.CardValue == Enums.Value.KING && card.CardValue == Enums.Value.QUEEN && card.CardValue == Enums.Value.JACK)
+                else if (card.CardValue == Enums.Value.KING || card.CardValue == Enums.Value.QUEEN || card.CardValue == Enums.Value.JACK)
                 {
                     handValue += 10;
                 }

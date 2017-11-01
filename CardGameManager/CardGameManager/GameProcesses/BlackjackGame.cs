@@ -54,7 +54,7 @@ namespace CardGameManager.GameProcesses
             currentPlayer.hand.Add(deck.DrawCard());
             if(BlackjackRules.CheckForBust(currentPlayer.hand) && currentPlayer.IsDealer)
             {
-                PlayerTurnEnd();
+                //PlayerTurnEnd();
             }
         }
 
@@ -66,40 +66,59 @@ namespace CardGameManager.GameProcesses
         {
             return true;
         }
-        private void PlayerTurnBegin()
+        public void PlayerTurnBegin()
         {
-            foreach (CardModel card in currentPlayer.hand)
+            flipCardsFaceUpDown('U');
+
+            if (currentPlayer.IsDealer)
             {
-                card.IsFlipped = false;
-            }
-            
-                if (currentPlayer.IsDealer)
+                while (currentPlayer.DealerHitOrStand())
                 {
-                    while (currentPlayer.DealerHitOrStand())
-                    {
-                        Hit();
-                    }
+                    Hit();
                 }
-            
+                PlayerTurnEnd();
+            }
+
         }
         public void PlayerTurnEnd()
         {
-            foreach (CardModel card in currentPlayer.hand)
-            {
-                card.IsFlipped = true;
-            }
-            currentPlayer.hand[1].IsFlipped = false;
+            flipCardsFaceUpDown('D');
 
-            if (currentPlayer.playerID == players.Count-1)
+            if (BlackjackRules.Elimination(currentPlayer.Balance) && !currentPlayer.IsDealer)
             {
-            //    roundOver = true;
-                currentPlayer = players[0];
+                players.Remove(currentPlayer);
             }
-            else
+            if (currentPlayer.playerID != players.Count)
             {
-                currentPlayer = players[currentPlayer.playerID + 1];
+                //    roundOver = true;
+                SwitchPlayer();
                 PlayerTurnBegin();
             }
+            
         } 
+
+        public void flipCardsFaceUpDown(char upDown)
+        {
+            if(upDown == 'U')
+            {
+                foreach (CardModel c in currentPlayer.hand)
+                {
+                    c.IsFlipped = false;
+                }
+            }
+            else if( upDown == 'D')
+            {
+                foreach (CardModel c in currentPlayer.hand)
+                {
+                    c.IsFlipped = true;
+                }
+                currentPlayer.hand[1].IsFlipped = false;
+            }
+        }
+
+        public void SwitchPlayer()
+        {
+            currentPlayer = players[currentPlayer.playerID];
+        }
     }
 }

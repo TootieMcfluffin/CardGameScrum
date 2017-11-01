@@ -76,11 +76,11 @@ namespace CardGameManager.Pages
                     players.Add(p5);
                 }
             }
-
             Player dealer = new Player();
             dealer.IsDealer = true;
-            players.Add(dealer);
+            dealer.playerID = players.Count + 1;
             currentGame = new BlackjackGame(players);
+            players.Add(dealer);
             Deal();
         }
 
@@ -108,16 +108,21 @@ namespace CardGameManager.Pages
             currentGame.Hit();
             currentGame.currentPlayer.hand.Add(currentGame.deck.DrawCard());
             AddCard();
+            if (currentGame.currentPlayer.IsDealer)
+            {
+                MessageBox.Show("I'm the dealer!");
+            }
             if (BlackjackRules.CheckForBust(currentGame.currentPlayer.hand))
             {
                 MessageBox.Show("You busted!");
                 currentGame.PlayerTurnEnd();
+                
             }
         }
 
         private void Split_Click(object sender, RoutedEventArgs e)
         {
-            
+             BlackjackRules.CheckForSplit(currentGame.currentPlayer);
         }
 
         private void Stay_Click(object sender, RoutedEventArgs e)
@@ -176,6 +181,7 @@ namespace CardGameManager.Pages
             BoolToImageConverter b2i = new BoolToImageConverter();
             b2i.CardBrush = new ImageBrush(new BitmapImage(new Uri(currentGame.currentPlayer.hand.Last().ImagePath, UriKind.RelativeOrAbsolute)));
             b2i.CardBackBrush = cardBackBrush;
+            newBinding.Mode = BindingMode.OneWay;
             newBinding.Converter = b2i;
             newBinding.UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged;
             BindingOperations.SetBinding(newLabel, Label.BackgroundProperty, newBinding);
@@ -225,5 +231,6 @@ namespace CardGameManager.Pages
             };
             return rectangleLabel;
         }
+
     }
 }
