@@ -33,7 +33,7 @@ namespace CardGameManager.Pages
 
         private void TwoPLayer_Click(object sender, RoutedEventArgs e)
         {
-            GameSetup setup = new GameSetup(2, "blackjack");
+            GameSetup setup = new GameSetup(2, "gofish");
             this.NavigationService.Navigate(setup);
         }
 
