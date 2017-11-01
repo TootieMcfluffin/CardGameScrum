@@ -33,9 +33,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>CardGameManager.App</StartupObject>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -66,6 +63,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Converters\BoolToImageConverter.cs" />
+    <Compile Include="GameProcesses\BlackjackGame.cs" />
     <Compile Include="GameProcesses\BlackjackRules.cs" />
     <Compile Include="GameProcesses\GoFishRules.cs" />
     <Compile Include="GameProcesses\WarRules.cs" />
@@ -88,10 +86,6 @@
     <Page Include="Pages\GameSetup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\GoFish.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\GoFishMenu.xaml">
       <Generator>MSBuild:Compile</Generator>

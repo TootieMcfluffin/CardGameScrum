@@ -42,5 +42,17 @@ namespace CardGameManager.Models
                 Deck.Insert(i, tempCard);
             }
         }
+
+        /// <summary>
+        /// Returns a card from the "top" of the deck. Removes that card from the list.
+        /// </summary>
+        /// <returns>Returns the top card of the deck.</returns>
+        public CardModel DrawCard()
+        {
+            CardModel cardDrawn;
+            cardDrawn = Deck[0];
+            Deck.RemoveAt(0);
+            return cardDrawn;
+        }
     }
 }

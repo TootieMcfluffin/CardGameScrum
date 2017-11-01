@@ -22,6 +22,8 @@ namespace CardGameManager.Models
 
         public bool Bust { get; set; }
 
+        public int playerID { get; set; }
+
         /// <summary>
         /// Returns true if dealer should hit and false if tey should stand.
         /// </summary>
