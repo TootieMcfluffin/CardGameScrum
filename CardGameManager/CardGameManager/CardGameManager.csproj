@@ -65,6 +65,7 @@
     <Compile Include="Converters\BoolToImageConverter.cs" />
     <Compile Include="GameProcesses\BlackjackGame.cs" />
     <Compile Include="GameProcesses\BlackjackRules.cs" />
+    <Compile Include="GameProcesses\GoFishGame.cs" />
     <Compile Include="GameProcesses\GoFishRules.cs" />
     <Compile Include="GameProcesses\WarRules.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -86,6 +87,10 @@
     <Page Include="Pages\GameSetup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\GoFish.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\GoFishMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -122,6 +127,9 @@
     </Compile>
     <Compile Include="Pages\GameSetup.xaml.cs">
       <DependentUpon>GameSetup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GoFish.xaml.cs">
+      <DependentUpon>GoFish.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\GoFishMenu.xaml.cs">
       <DependentUpon>GoFishMenu.xaml</DependentUpon>

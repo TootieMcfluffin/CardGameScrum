@@ -27,12 +27,15 @@ namespace CardGameManager.Pages
 		public List<string> PlayerNames { get; set; }
 		public List<GoFishPlayer> players = new List<GoFishPlayer>();
 		public DeckModel deck = new DeckModel();
+		GoFishGame game;
+		ImageBrush cardBackBrush = new ImageBrush(new BitmapImage(new Uri(@"..\\..\\Images\\CARD_BACK.png", UriKind.RelativeOrAbsolute)));
 		public GoFish(List<string> names)
 		{
 			InitializeComponent();
 			PlayerNames = names;
 			Startup();
-			
+			game = new GoFishGame(players);
+//			game.GamePlay();
 		}
 
 		public void Startup()
@@ -42,11 +45,12 @@ namespace CardGameManager.Pages
 			CreatePlayers();
 			DealCards();
 			PopulateBoard();
-	//		GamePlay();
+//			CreateCardPile();
 		}
 
 		public void PopulateBoard()
 		{
+
 			for (int i = 0; i < NumOfPlayers; i++)
 			{
 				Label lab = new Label();
@@ -68,6 +72,7 @@ namespace CardGameManager.Pages
 					{
 						Grid.SetColumn(lab, 0);
 						Grid.SetRow(lab, 0); 
+
 						
 					}
 					else if (i == 1)
@@ -152,73 +157,20 @@ namespace CardGameManager.Pages
 		
 		}
 
-		public void DisplayCards(GoFishPlayer player)
+		public void CreateCardPile()
 		{
-			foreach (CardModel card in player.hand)
-			{
-				
-			}
+			CardModel card = new CardModel(Enums.Suit.DIAMONDS, Enums.Value.ACE);
+			CardHolder.DataContext = card;
+
+			card.IsFlipped = false;
+			CardHolder.Content = "Card Pile";
+			CardHolder.BorderBrush = Brushes.Black;
+			CardHolder.BorderThickness = new Thickness(5);
+
+
+
 		}
 
-
-		public void GamePlay()
-		{
-			bool keepgoing = true;
-			int playerCounter = 0;
-			MessageBox.Show($"{players[0].Name} Goes First");
-			
-
-
-			do
-			{
-				GoFishPlayer currentPlayer = players[playerCounter];
-
-				// currentPlayer clicks on player display to ask that player for a card
-				// currentPlayer is prompted for a desired card from the desired player
-
-				// p becomes the player that the current player clicks on.
-				GoFishPlayer chosenPlayer = players[2];
-
-				// This card should be desired card from the current player
-				CardModel desiredCard = currentPlayer.hand[1];
-
-
-				int cardsExchanged = GoFishRules.ExchangeCards(currentPlayer, desiredCard, chosenPlayer);
-
-				if (cardsExchanged == 0)
-				{
-					// The current player goes Fish
-
-				}
-				else
-				{
-					// The current player has Hooked
-				}
-
-				if (GoFishRules.CheckForBook(currentPlayer))
-				{
-					// The current Player scored a book
-				}
-				else
-				{
-					// They didnt score a book
-				}
-
-
-				if (playerCounter < players.Count)
-				{
-					playerCounter++;
-				}
-				else
-				{
-					playerCounter = 0;
-				}
-
-				// Checking for win
-				keepgoing = GoFishRules.CheckForWin(players);
-
-			} while (keepgoing);
-		}
 
 	}
 }
