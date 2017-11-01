@@ -33,9 +33,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>CardGameManager.App</StartupObject>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -90,10 +87,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\GoFish.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\GoFishMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -129,9 +122,6 @@
     </Compile>
     <Compile Include="Pages\GameSetup.xaml.cs">
       <DependentUpon>GameSetup.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\GoFish.xaml.cs">
-      <DependentUpon>GoFish.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\GoFishMenu.xaml.cs">
       <DependentUpon>GoFishMenu.xaml</DependentUpon>

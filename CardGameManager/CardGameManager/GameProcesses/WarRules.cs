@@ -28,7 +28,7 @@ namespace CardGameManager.GameProcesses
         /// <returns>If true, the player has lost. If false, the player can still play.</returns>
         public static bool IsLoser(Player player)
         {
-            if (player.hand.Count <= 3)
+            if (player.secondHand.Count <= 3)
             {
                 return true;
             }
