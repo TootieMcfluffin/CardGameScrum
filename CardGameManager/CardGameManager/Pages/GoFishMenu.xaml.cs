@@ -21,11 +21,6 @@ namespace CardGameManager.Pages
     public partial class GoFishMenu : Page
     {
 
-		// Need to make GetCurrentPlayer() method.
-		// Need to make GetPlayerAsked() method.
-		// Need to make ChangePlayer() method.
-		// Have kade teach me how all() of this navigation mumbo jumbo works.
-
         public GoFishMenu()
         {
             InitializeComponent();
@@ -33,13 +28,21 @@ namespace CardGameManager.Pages
 
         private void TwoPLayer_Click(object sender, RoutedEventArgs e)
         {
-            GameSetup setup = new GameSetup(2, "blackjack");
+            GameSetup setup = new GameSetup(2, "gofish");
             this.NavigationService.Navigate(setup);
         }
 
         private void Instructions_Click(object sender, RoutedEventArgs e)
         {
-            Instructions instructions = new Instructions("These are Go Fish Instructions");
+            Instructions instructions = new Instructions("Compete against your friends in the exciting game of Go Fish." +
+                "\nEach player is dealt five cards. The rest of the cards are set in the center as the deck. They may play any pairs from their hand at this time." +
+                "\nPairs are made by matching two cards of the same value. They do not have to have the same color." +
+                "\nPlay moves clockwise from the first player." +
+                "\nOn the player's turn, they ask another player for a card value. If the asked player has it, they give it to the questioning player." +
+                "\nThe next player takes their turn after the previous player is told \'Go fish\', where they then draw one card from the deck." +
+                "\nIf the player draws the card they asked for, their turn continues." +
+                "\nIf a player runs out of cards in their hand at any time, they draw five cards from the deck, unless the deck is empty." +
+                "\nThe game ends once all pairs have been made. Pairs are tallied at this time, and the player with the most pairs wins.");
             this.NavigationService.Navigate(instructions);
         }
 
@@ -60,5 +63,7 @@ namespace CardGameManager.Pages
             MainMenu mainMenu = new MainMenu();
             this.NavigationService.Navigate(mainMenu);
         }
+
+		
     }
 }

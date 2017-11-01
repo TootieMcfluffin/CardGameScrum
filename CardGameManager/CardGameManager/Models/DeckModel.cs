@@ -14,11 +14,22 @@ namespace CardGameManager.Models
         public DeckModel()
         {
             Deck = new List<CardModel>();
-            for (int i = 0; i < 4; i++)
+            //for (int i = 0; i < 4; i++)
+            //{
+            //    for (int j = 0; j < 13; j++)
+            //    {
+            //        Deck.Add(new CardModel((Suit)i, (Value)j));
+            //    }
+            //}
+
+            //New code for initiliazing deck. This one works slightly better
+            //than the previous but still has errors
+
+            foreach(Suit su in Enum.GetValues(typeof(Suit)))
             {
-                for (int j = 0; j < 13; j++)
+                foreach(Value val in Enum.GetValues(typeof(Value)))
                 {
-                    Deck.Add(new CardModel((Suit)i, (Value)j));
+                    Deck.Add(new CardModel(su, val));
                 }
             }
         }

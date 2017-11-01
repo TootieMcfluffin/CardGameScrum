@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using CardGameManager.Models;
 using System.Collections.Generic;
 using System.Globalization;
@@ -16,7 +16,7 @@ namespace CardGameManager.Converters
         public Brush CardBrush { get; set; }
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
+        { 
             Brush imageBrush = null;
             if (targetType == typeof(Brush))
             {

@@ -25,6 +25,24 @@ namespace CardGameManager.Models
         public int playerID { get; set; }
 
         /// <summary>
+        /// Used in war to shuffle the pile of cards won into the players hand
+        /// </summary>
+        public void ShuffleSecondHand()
+        {
+            Random rand = new Random();
+            for (int i = 0; i < secondHand.Count; i++)
+            {
+                int randNum = rand.Next(i, secondHand.Count);
+                CardModel tempCard = secondHand.ElementAt(randNum);
+                secondHand.Insert(randNum, secondHand.ElementAt(i));
+                secondHand.RemoveAt(randNum + 1);
+                secondHand.RemoveAt(i);
+                secondHand.Insert(i, tempCard);
+            }
+			
+		}
+			
+        /// <summary>
         /// Returns true if dealer should hit and false if tey should stand.
         /// </summary>
         /// <returns> Boolean representing weather or not to hit.</returns>
