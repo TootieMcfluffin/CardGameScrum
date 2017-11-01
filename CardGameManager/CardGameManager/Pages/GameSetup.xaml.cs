@@ -170,8 +170,8 @@ namespace CardGameManager.Pages
             }
             else if(game.Equals("gofish", StringComparison.OrdinalIgnoreCase))
             {
-                //GoFish gofish = new GoFish(names);
-                //this.NavigationService.Navigate(gofish);
+                GoFish gofish = new GoFish(names);
+                this.NavigationService.Navigate(gofish);
             }
             else if(game.Equals("war", StringComparison.OrdinalIgnoreCase))
             {

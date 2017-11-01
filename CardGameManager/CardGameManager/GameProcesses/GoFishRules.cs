@@ -46,16 +46,21 @@ namespace CardGameManager.GameProcesses
 
 		// Occurs when the current player asks another player for cards,
 		// And the asked player has at least one of the desired cards.
-		public static void ExchangeCards(Player p1, CardModel desiredCard, Player p2)
+		public static int ExchangeCards(Player p1, CardModel desiredCard, Player p2)
 		{
+			int numOfCards = 0;
+
 			foreach (CardModel card in p2.hand)
 			{
 				if(card.CardValue == desiredCard.CardValue)
 				{
 					p1.hand.Add(card);
 					p2.hand.Remove(card);
+					numOfCards++;
 				}
 			}
+
+			return numOfCards;
 		}
 
 
@@ -64,9 +69,10 @@ namespace CardGameManager.GameProcesses
 		// If this player has a book, then the cards will be 
 		// removed from the players hand, and 1 will be added to
 		// the players book count.
-		public static void CheckForBook(GoFishPlayer p1)
+		public static bool CheckForBook(GoFishPlayer p1)
 		{
 			CardModel tempCard = null;
+			bool didScore = true;
 			bool validRemoveCards = true;
 			int cardCounter = 0;
 			int cardTracker = 0;
@@ -105,12 +111,19 @@ namespace CardGameManager.GameProcesses
 						p1.hand.Remove(card);
 					}
 				}
+				didScore = true;
 			}
+			else
+			{
+				didScore = false;
+			}
+
+			return didScore;
 		}
 
 
 
-		public static bool CheckForWin(LinkedList<GoFishPlayer> players)
+		public static bool CheckForWin(List<GoFishPlayer> players)
 		{
 			bool isValid = true;
 
